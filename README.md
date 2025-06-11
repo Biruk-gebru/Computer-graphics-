@@ -9,6 +9,14 @@ This is a classic Tic-Tac-Toe game implemented using Pygame and OpenGL. It featu
 *   **Interactive Game Board**: Graphical representation of the Tic-Tac-Toe board.
 *   **Restart Option**: Easily restart the game after it ends.
 
+## Group Members
+*   Addisu Mengistu (UGR/6574/15, @crackingastro)
+*   Biruk Gebru (UGR/7852/15, @Biruk_Gebru)
+*   Bisrat Maru (UGR/8579/15, @BM197)
+*   Henock Tuna (UGR/6311/15, @whynotlua)
+*   Jibril Mustefa (UGR/9326/15, @FindMe1001)
+*   Mussie Negash (NSR/1259/14, @Mos_bek)
+
 ## How to Play
 1.  **Run the game**: Execute the `Assignment.py` file.
 2.  **Choose Game Mode**: A selection screen will appear. Click "Single Player" to play against the AI, or "Two Player" to play with another person.
@@ -83,6 +91,7 @@ graph TD
     O -- Yes --> A
     O -- No --> P[End Game]
 ```
+
 ## Setup and Run
 
 ### Prerequisites
