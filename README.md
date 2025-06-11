@@ -56,36 +56,33 @@ This function iterates through all empty cells on the current `board`. For each 
 ```mermaid
 graph TD
     A[Start Game] --> B{Choose Mode?}
-    B -- Single Player --> C[Initialize Board for AI (O) vs Player (X)]
+    B -- Single Player --> C["Initialize Board for AI (O) vs Player (X)"]
     B -- Two Player --> D[Initialize Board for Player X vs Player O]
 
     C --> E[Game Loop]
     D --> E
 
-    E --> F{Player X's Turn?}
-    F -- Yes --> G[Wait for Player X's Mouse Click]
-    F -- No (AI's turn or Player O's turn) --> H{Is it AI's Turn (Single Player)?}
+    E --> F{"Current Player's Turn<br>(X or O)?"}
+    F -- X's Turn --> G[Wait for Player X's Mouse Click]
+    F -- O's Turn (Single Player) --> H[Calculate Best Move using Minimax]
+    F -- O's Turn (Two Player) --> I[Wait for Player O's Mouse Click]
 
-    G --> I[Validate Move & Update Board]
-    I --> J{Check Winner?}
-    J --> K{Check Draw?}
+    G --> J[Validate Move & Update Board]
+    H --> J
+    I --> J
 
-    H -- Yes --> L[Calculate Best Move using Minimax]
-    L --> I
-    H -- No --> G
+    J --> K{Check Winner?}
+    K -- No --> L{Check Draw?}
+    K -- Yes --> M[Display Result]
 
-    K -- No --> F
-    K -- Yes --> M{Game Over?}
+    L -- No --> N{Switch Current Player?}
+    N --> F
+    L -- Yes --> M
 
-    J -- No --> K
-    J -- Yes --> M
-
-    M -- Yes --> N[Display Result]
-    N --> O{Play Again?}
+    M --> O{Play Again?}
     O -- Yes --> A
     O -- No --> P[End Game]
 ```
-
 ## Setup and Run
 
 ### Prerequisites
